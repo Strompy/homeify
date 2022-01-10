@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "Homepages" do
-  describe "GET /index" do
+RSpec.describe 'Homepage' do
+  describe 'User visits homepage' do
     it 'has account links' do
-      # Tests failing because no html being rendered. Something wrong with web driver?
-      save_and_open_page
+      visit root_path
+
       expect(page).to have_content('Homeify')
       expect(page).to have_link('Login')
       expect(page).to have_link('Create Account')
