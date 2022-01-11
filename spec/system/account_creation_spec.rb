@@ -15,8 +15,7 @@ RSpec.describe 'User account creation' do
       click_button 'Sign Up'
 
       expect(User.count).to eq(1)
-      user = User.last
-      expect(current_path).to eq(user_path(user.id))
+      expect(current_path).to eq(profile_path)
       expect(page).to have_content('Account created successfully!')
     end
   end
